@@ -1,2 +1,2 @@
-# AzureChatbot
-A chatbot hosted using Microsoft Azure
+# AzureAPI Example project
+An API hosted using Microsoft Azure
