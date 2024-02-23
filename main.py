@@ -1,14 +1,15 @@
-#Example of fetching data from API
+#Example of fetching data from OpenAI API
+from openAI 
 import requests
 import json
+from flask import Flask, jsonify
 
-response = requests.get("https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow")
-print(response)
+app = Flask(__name__)
 
-for data in response.json()['items']:
-    if data['answer_count'] == 0:
-        print(data['title'])
-        print(data['link'])
-    else:
-        print("Skipped")
-    print()
+
+@app.route('/')
+def index():
+    return jsonify({"message": "hello world"})
+
+if __name__ == "__main__":
+    app.run()
