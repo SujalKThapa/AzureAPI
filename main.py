@@ -1,4 +1,4 @@
-#Example of fetching data from OpenAI API
+#Will require an OpenAI API key, which you can get from the website itself.
 from openAI 
 import requests
 import json
