@@ -12,6 +12,8 @@ foodList = df["FoodItem"].tolist()
 calList = [string.replace(" cal", "") for string in calList]
 calList = list(map(int, calList))
 
+NoteDict = {"A1": {"Title": "Hello World"}}
+
 @app.route('/')
 def index():
     return jsonify({"message": "hello world"})
@@ -25,6 +27,14 @@ def calories():
         if(calList[i] <= calorieCount):
             healthyFoods.update({foodList[i]:calList[i]})
     return jsonify(healthyFoods)
+
+
+@app.route('/getNote')
+def getNote():
+    noteID = request.args.get('noteID')
+    return jsonify(NoteDict.get(noteID))
+
+
 
 if __name__ == "__main__":
     app.run()
