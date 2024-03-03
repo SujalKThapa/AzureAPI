@@ -1,6 +1,6 @@
 #This API will return a list of all the common food items that meet the specified food criteria.
 import requests
-import json
+import simplejson as json
 import pandas as pd
 
 from flask import Flask, jsonify, request
